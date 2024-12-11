@@ -1,130 +1,167 @@
 /* Stile generale per il body */
 body {
-    background-color: #f4f7f6; /* Colore di sfondo molto chiaro */
-    color: #333; /* Testo scuro per buona leggibilità */
-    font-family: 'Arial', sans-serif;
+    background-color: #282c34; /* Sfondo scuro */
+    color: #f8f9fa; /* Testo chiaro */
+    font-family: 'Roboto', sans-serif; /* Font moderno */
     margin: 0;
     padding: 0;
     height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 /* Contenitore principale */
 .container {
-    max-width: 900px;
-    margin: auto;
-    padding: 40px 20px;
-    background-color: #fff; /* Sfondo bianco per contrasto */
-    border-radius: 8px; /* Angoli arrotondati */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Ombra leggera */
+    max-width: 1000px;
+    margin: 40px;
+    padding: 30px;
+    background-color: #3c3f47; /* Colore scuro di sfondo */
+    border-radius: 25px; /* Angoli arrotondati */
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3); /* Ombra per effetto 3D */
+    transform: translateY(-30px);
+    animation: slideUp 1s ease-out forwards; /* Animazione di ingresso */
 }
 
-/* Intestazione */
+/* Animazione di slide-up per il contenitore */
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(100px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Intestazione con sfondo rosso */
 .bg-dark {
-    background-color: #343a40; /* Colore scuro per il titolo */
-    border-radius: 8px;
-    padding: 20px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: #ff6347; /* Colore rosso-arancio */
+    border-radius: 25px; /* Angoli arrotondati */
+    padding: 30px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); /* Ombra per profondità */
 }
 
+/* Titolo nella sezione .bg-dark */
 .bg-dark h1 {
-    font-size: 2.5rem;
-    font-weight: 700;
-    color: #fff;
+    font-size: 3rem;
+    font-weight: 900;
+    color: #f1f1f1; /* Testo chiaro */
+    text-align: center;
 }
 
+/* Testo secondario nella sezione .bg-dark */
 .bg-dark p {
-    font-size: 1rem;
-    color: #d1d1d1;
+    font-size: 1.25rem;
+    color: #f1f1f1; /* Testo chiaro */
+    text-align: center;
 }
 
-/* Lista degli elementi */
+/* Elementi della lista */
 .list-group-item {
-    background-color: #f8f9fa;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    margin-bottom: 15px;
-    font-size: 1.2rem;
-    padding: 12px 15px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-    transition: all 0.3s ease;
+    background-color: #4f5d75; /* Colore di sfondo blu-grigio */
+    border: 1px solid #636f83; /* Bordo più chiaro */
+    border-radius: 15px; /* Angoli arrotondati */
+    margin-bottom: 20px;
+    font-size: 1.3rem;
+    padding: 18px;
+    transition: all 0.4s ease-in-out; /* Transizione morbida */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ombra leggera */
 }
 
+/* Effetto hover sugli elementi della lista */
 .list-group-item:hover {
-    background-color: #e9ecef; /* Cambio di colore al passaggio del mouse */
-    transform: scale(1.02); /* Effetto leggero di zoom */
-}
-
-.list-group-item span {
-    flex-grow: 1;
+    background-color: #3e4a60; /* Colore più scuro al passaggio del mouse */
+    transform: translateY(-5px); /* Effetto sollevamento */
 }
 
 /* Pulsanti */
 .btn {
-    border-radius: 20px; /* Pulsanti con angoli arrotondati */
-    padding: 10px 20px;
-    font-weight: bold;
+    border-radius: 30px; /* Angoli arrotondati */
+    padding: 14px 30px;
+    font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: 1px;
-    transition: background-color 0.3s ease, transform 0.3s ease;
+    letter-spacing: 1.3px;
+    cursor: pointer;
+    transition: all 0.3s ease; /* Transizione al passaggio del mouse */
 }
 
+/* Effetto hover sui pulsanti */
 .btn:hover {
-    transform: translateY(-2px); /* Piccola animazione di sollevamento */
+    transform: scale(1.1); /* Pulsante che cresce un po' al passaggio del mouse */
 }
 
+/* Pulsante di tipo "pericolo" (rosso) */
 .btn-danger {
     background-color: #e74c3c;
     border-color: #e74c3c;
 }
 
+/* Hover per il pulsante pericolo */
 .btn-danger:hover {
     background-color: #c0392b;
 }
 
+/* Pulsante di tipo "successo" (verde) */
 .btn-success {
-    background-color: #2ecc71;
-    border-color: #2ecc71;
+    background-color: #1abc9c;
+    border-color: #1abc9c;
 }
 
+/* Hover per il pulsante successo */
 .btn-success:hover {
-    background-color: #27ae60;
+    background-color: #16a085;
 }
 
+/* Pulsante di tipo "avviso" (giallo) */
 .btn-warning {
     background-color: #f39c12;
     border-color: #f39c12;
     color: #fff;
 }
 
+/* Hover per il pulsante avviso */
 .btn-warning:hover {
     background-color: #e67e22;
 }
 
-/* Form aggiungi elemento */
+/* Form di input */
 form .form-control {
-    border-radius: 8px;
-    border: 1px solid #ced4da;
-    padding: 12px;
-    font-size: 1rem;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
-}
-
-form .btn {
-    font-weight: bold;
-}
-
-/* Sezione vuota */
-.text-center {
-    margin-top: 40px;
+    border-radius: 15px;
+    border: 1px solid #444;
+    padding: 16px;
     font-size: 1.2rem;
-    color: #666;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    background-color: #2d353d; /* Sfondo scuro nei campi di input */
+    color: #f1f1f1; /* Testo chiaro */
+    transition: border 0.3s ease, background-color 0.3s ease; /* Transizione morbida */
 }
 
+/* Focus sui campi del form */
+form .form-control:focus {
+    border-color: #ff6347; /* Colore rosso-arancio al focus */
+    background-color: #3c444b; /* Colore di sfondo più chiaro al focus */
+    outline: none;
+}
+
+/* Sezione di testo centrato */
+.text-center {
+    margin-top: 50px;
+    font-size: 1.4rem;
+    color: #bdc3c7; /* Colore chiaro ma neutro */
+    text-align: center;
+}
+
+/* Link centrato */
 .text-center a {
-    color: #007bff;
+    color: #3498db;
     text-decoration: none;
+    font-weight: 700;
 }
 
+/* Hover sui link centrati */
 .text-center a:hover {
     text-decoration: underline;
+    color: #2980b9;
 }
